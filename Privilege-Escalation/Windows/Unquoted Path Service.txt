@@ -1,0 +1,7 @@
+1. To check the sub-directories permission in a current working directory:
+
+-- .\accesschk.exe /accepteula -uqwvd <Username> * [This checks whether the user has any/write permission on any directories]
+
+-- icacls "C:\File\Path\To\Check\The\Directory\Permission" [One at a time without wildcard]
+
+-- icacls "C:\File\Path\To\Check\The\File\Permission.exe"
