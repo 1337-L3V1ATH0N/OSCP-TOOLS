@@ -1,0 +1,9 @@
+Insecure or Weak Registry Service Permission: [In this attack we as a normal unprivileged user can modify the Image Path of Service Executables in Registry.]
+
+-- .\accesschk.exe /accepteula -uqvwk <Username> "HKLM\system\currentcontrolset\services" - [ This will print all services and permissions a user have access to.]
+
+[If we have any Service Binary Path Writable then we can change that to our malicious executable which we can execute after restarting the service.]
+
+-- Also this below shared article can be referred to exploit this mis-configuration.
+
+https://www.hackingarticles.in/windows-privilege-escalation-weak-registry-permission/
