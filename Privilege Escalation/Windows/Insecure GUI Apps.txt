@@ -1,0 +1,12 @@
+If you found any credentials as a normal user then always try to get access with RDP, Because it might be a hint for different types of attacks.
+Like DLL Hijacking or Insecure GUI Application on Desktop of Normal User.
+
+Running the Applications on Desktop might reveal that the application is running as which user?
+
+After running the application check in tasklist or task manager in Details tab as what user the Application is running.
+
+If the application is running as different user not as the user we logged in as.
+
+Then always check for opening the cmd as by saving the file or by changing the path within the application as it's functionality.
+
+This will give shell/cmd as that user
