@@ -1,3 +1,9 @@
 1. To check the services the user has permission to modify or write:
 
 -- .\accesschk.exe /accepteula -uqvwc <Username> * [This checks whether the user has any permission on any services]
+
+If you found that the service is running as another user than LocalSystem then we can change the user if we have access to modify the configs.
+
+Then we can change the user as adding 'obj= ' argument.
+
+-- sc config <Service Name> binpath= "C:\Path\To\The\Service.exe" obj= LocalSystem
