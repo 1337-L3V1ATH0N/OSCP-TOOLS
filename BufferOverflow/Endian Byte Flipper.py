@@ -1,4 +1,4 @@
-print("== Endian Byte Flipper ==\nMade with <3 by Akash Pandey")
+print("== Endian Byte Flipper ==\nDeveloped with <3 by Akash Pandey")
 endian=input("\n[+] Enter your jump ESP address: ")
 increment=0
 if len(endian)==8:
